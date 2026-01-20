@@ -1,90 +1,37 @@
-// ================= PRODUCT SETUP =================
-const params = new URLSearchParams(window.location.search);
-const product = params.get("product");
+const phone = "9999829152";
 
-let basePrice = 0;
-let productName = "";
+function openModal(id){ document.getElementById(id).style.display="block"; }
+function closeModal(id){ document.getElementById(id).style.display="none"; }
 
-if (product === "mini") {
-  basePrice = 10;
-  productName = "Mini Joy Chocolate";
+function addons(n){
+  let a=0;
+  if(document.getElementById("cashews"+n)?.checked) a+=7;
+  if(document.getElementById("almonds"+n)?.checked) a+=5;
+  if(document.getElementById("chips"+n)?.checked) a+=10;
+  if(document.getElementById("sprinkles"+n)?.checked) a+=8;
+  return a;
 }
 
-if (product === "mid") {
-  basePrice = 25;
-  productName = "Mid-Size Chocolate Bliss";
+function calc1(){ total(1,10); }
+function calc2(){ total(2,25); }
+function calc3(){ total(3,99); }
+function calc4(){ total(4,149); }
+
+function total(n,base){
+  let q=Number(document.getElementById("qty"+n).value||1);
+  document.getElementById("total"+n).innerText=q*(base+addons(n));
 }
 
-if (product === "big") {
-  basePrice = 99;
-  productName = "Big Bite Chocolate Bar";
+function send(msg){
+  window.location.href="https://wa.me/"+phone+"?text="+encodeURIComponent(msg);
 }
 
-if (product === "name") {
-  basePrice = 149;
-  productName = "Personalised Name Chocolate";
-  document.getElementById("nameBox").style.display = "block";
+function order1(){ send(`MELVIQUE ORDER\nMini Joy Chocolate\nTotal ₹${totalVal(1)}`); }
+function order2(){ send(`MELVIQUE ORDER\nMid Size Chocolate Bliss\nTotal ₹${totalVal(2)}`); }
+function order3(){ send(`MELVIQUE ORDER\nBig Bite Chocolate Bar\nTotal ₹${totalVal(3)}`); }
+function order4(){
+  let name=document.getElementById("name4").value||"—";
+  send(`MELVIQUE ORDER\nPersonalised Chocolate\nName: ${name}\nTotal ₹${totalVal(4)}`);
 }
 
-// ================= DOM REFERENCES =================
-const title = document.getElementById("productTitle");
-const qty = document.getElementById("qty");
-const total = document.getElementById("total");
-
-const cashews = document.getElementById("cashews");
-const almonds = document.getElementById("almonds");
-const chips = document.getElementById("chips");
-const sprinkles = document.getElementById("sprinkles");
-
-if (title) title.innerText = productName;
-
-// ================= CALCULATION =================
-function calculateTotal() {
-  let addonPrice = 0;
-
-  if (cashews && cashews.checked) addonPrice += 7;
-  if (almonds && almonds.checked) addonPrice += 5;
-  if (chips && chips.checked) addonPrice += 10;
-  if (sprinkles && sprinkles.checked) addonPrice += 8;
-
-  const quantity = Number(qty.value) || 1;
-  const finalTotal = quantity * (basePrice + addonPrice);
-
-  if (total) total.innerText = finalTotal;
-}
-
-// attach live update
-document.querySelectorAll("input").forEach(input => {
-  input.addEventListener("change", calculateTotal);
-  input.addEventListener("keyup", calculateTotal);
-});
-
-calculateTotal();
-
-// ================= WHATSAPP ORDER =================
-function placeOrder() {
-  const quantity = qty.value;
-  const totalPrice = total.innerText;
-
-  let addons = [];
-  if (cashews && cashews.checked) addons.push("Cashews");
-  if (almonds && almonds.checked) addons.push("Almonds");
-  if (chips && chips.checked) addons.push("Choco Chips");
-  if (sprinkles && sprinkles.checked) addons.push("Sprinkles");
-
-  const nameMsgEl = document.getElementById("customName");
-  const nameMsg = nameMsgEl ? nameMsgEl.value : "";
-
-  const message = `
-MELVIQUE ORDER 🍫
-Product: ${productName}
-Quantity: ${quantity}
-Add-ons: ${addons.length ? addons.join(", ") : "None"}
-${nameMsg ? "Name/Message: " + nameMsg : ""}
-Total: ₹${totalPrice}
-`;
-
-  window.location.href =
-    "https://wa.me/919999829152?text=" +
-    encodeURIComponent(message);
-}
+function totalVal(n){ return document.getElementById("total"+n).innerText; }
