@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>MELVIQUE – Handcrafted Chocolates</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,61 +18,100 @@
 
 <section class="products">
 
-  <!-- PRODUCT 1 -->
+  <!-- PRODUCT CARD -->
   <div class="product">
     <img src="Mini-Joy-Chocolate.jpg.jpeg">
     <h3>Mini Joy Chocolate</h3>
-    <p>₹10 per piece</p>
+    <button onclick="openModal(1)">Customize</button>
+  </div>
 
-    <input type="number" id="qty1" value="1" min="1" onchange="calc(1,10)">
+  <div class="product">
+    <img src="Mid-Size-Chocolate-Bliss.jpg.jpeg">
+    <h3>Mid Size Chocolate Bliss</h3>
+    <button onclick="openModal(2)">Customize</button>
+  </div>
+
+  <div class="product">
+    <img src="Big-Bite-Chocolate-Bar.jpg.jpeg">
+    <h3>Big Bite Chocolate Bar</h3>
+    <button onclick="openModal(3)">Customize</button>
+  </div>
+
+  <div class="product">
+    <img src="Personalised-Name-Chocolate.jpg.jpeg">
+    <h3>Personalised Name Chocolate</h3>
+    <button onclick="openModal(4)">Customize</button>
+  </div>
+
+</section>
+
+<!-- MODALS -->
+
+<div class="modal" id="modal1">
+  <div class="modal-box">
+    <span class="close" onclick="closeModal(1)">×</span>
+    <h2>Mini Joy Chocolate</h2>
+
+    Quantity:
+    <input type="number" id="q1" value="1" min="1" oninput="calc(1,10)">
+
     <label><input type="checkbox" id="c1" onchange="calc(1,10)"> Cashews +₹7</label>
     <label><input type="checkbox" id="a1" onchange="calc(1,10)"> Almonds +₹5</label>
     <label><input type="checkbox" id="ch1" onchange="calc(1,10)"> Choco Chips +₹10</label>
     <label><input type="checkbox" id="s1" onchange="calc(1,10)"> Sprinkles +₹8</label>
 
     <p>Total ₹<span id="t1">10</span></p>
+
     <button onclick="order(1,'Mini Joy Chocolate',10)">Place Order</button>
   </div>
+</div>
 
-  <!-- PRODUCT 2 -->
-  <div class="product">
-    <img src="Mid-Size-Chocolate-Bliss.jpg.jpeg">
-    <h3>Mid Size Chocolate Bliss</h3>
-    <p>₹25 per piece</p>
+<div class="modal" id="modal2">
+  <div class="modal-box">
+    <span class="close" onclick="closeModal(2)">×</span>
+    <h2>Mid Size Chocolate Bliss</h2>
 
-    <input type="number" id="qty2" value="1" min="1" onchange="calc(2,25)">
+    Quantity:
+    <input type="number" id="q2" value="1" min="1" oninput="calc(2,25)">
+
     <label><input type="checkbox" id="c2" onchange="calc(2,25)"> Cashews +₹7</label>
     <label><input type="checkbox" id="a2" onchange="calc(2,25)"> Almonds +₹5</label>
     <label><input type="checkbox" id="ch2" onchange="calc(2,25)"> Choco Chips +₹10</label>
     <label><input type="checkbox" id="s2" onchange="calc(2,25)"> Sprinkles +₹8</label>
 
     <p>Total ₹<span id="t2">25</span></p>
+
     <button onclick="order(2,'Mid Size Chocolate Bliss',25)">Place Order</button>
   </div>
+</div>
 
-  <!-- PRODUCT 3 -->
-  <div class="product">
-    <img src="Big-Bite-Chocolate-Bar.jpg.jpeg">
-    <h3>Big Bite Chocolate Bar</h3>
-    <p>₹99 per piece</p>
+<div class="modal" id="modal3">
+  <div class="modal-box">
+    <span class="close" onclick="closeModal(3)">×</span>
+    <h2>Big Bite Chocolate Bar</h2>
 
-    <input type="number" id="qty3" value="1" min="1" onchange="calc(3,99)">
+    Quantity:
+    <input type="number" id="q3" value="1" min="1" oninput="calc(3,99)">
+
     <label><input type="checkbox" id="c3" onchange="calc(3,99)"> Cashews +₹7</label>
     <label><input type="checkbox" id="a3" onchange="calc(3,99)"> Almonds +₹5</label>
     <label><input type="checkbox" id="ch3" onchange="calc(3,99)"> Choco Chips +₹10</label>
     <label><input type="checkbox" id="s3" onchange="calc(3,99)"> Sprinkles +₹8</label>
 
     <p>Total ₹<span id="t3">99</span></p>
+
     <button onclick="order(3,'Big Bite Chocolate Bar',99)">Place Order</button>
   </div>
+</div>
 
-  <!-- PRODUCT 4 -->
-  <div class="product">
-    <img src="Personalised-Name-Chocolate.jpg.jpeg">
-    <h3>Personalised Name Chocolate</h3>
-    <p>₹149 per piece</p>
+<div class="modal" id="modal4">
+  <div class="modal-box">
+    <span class="close" onclick="closeModal(4)">×</span>
+    <h2>Personalised Name Chocolate</h2>
 
-    <input type="number" id="qty4" value="1" min="1" onchange="calc(4,149)">
+    Quantity:
+    <input type="number" id="q4" value="1" min="1" oninput="calc(4,149)">
+
     <input type="text" id="name4" placeholder="Name / Message">
 
     <label><input type="checkbox" id="c4" onchange="calc(4,149)"> Cashews +₹7</label>
@@ -81,10 +120,10 @@
     <label><input type="checkbox" id="s4" onchange="calc(4,149)"> Sprinkles +₹8</label>
 
     <p>Total ₹<span id="t4">149</span></p>
+
     <button onclick="order(4,'Personalised Name Chocolate',149)">Place Order</button>
   </div>
-
-</section>
+</div>
 
 <script src="script.js"></script>
 </body>
