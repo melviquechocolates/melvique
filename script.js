@@ -1,43 +1,45 @@
-function openModal(i){
-  document.getElementById("modal"+i).style.display="flex";
+const params = new URLSearchParams(window.location.search);
+const product = params.get("product");
+
+let base = 0;
+let name = "";
+
+if (product === "mini") { base = 10; name="Mini Joy Chocolate"; }
+if (product === "mid") { base = 25; name="Mid Size Chocolate Bliss"; }
+if (product === "big") { base = 99; name="Big Bite Chocolate Bar"; }
+if (product === "name") {
+  base = 149;
+  name="Personalised Name Chocolate";
+  document.getElementById("nameBox").style.display="block";
 }
 
-function closeModal(i){
-  document.getElementById("modal"+i).style.display="none";
+document.getElementById("title").innerText = name;
+document.getElementById("total").innerText = base;
+
+function calculate() {
+  const q = Number(qty.value);
+  let addon = 0;
+
+  if (c.checked) addon += 7;
+  if (a.checked) addon += 5;
+  if (ch.checked) addon += 10;
+  if (s.checked) addon += 8;
+
+  total.innerText = q * (base + addon);
 }
 
-function addons(i){
-  let p=0, t=[];
-  if(c(i)) {p+=7; t.push("Cashews");}
-  if(a(i)) {p+=5; t.push("Almonds");}
-  if(ch(i)){p+=10;t.push("Choco Chips");}
-  if(s(i)) {p+=8; t.push("Sprinkles");}
-  return {price:p,text:t.join(", ")||"None"};
-}
+function placeOrder() {
+  const q = qty.value;
+  const totalPrice = total.innerText;
+  const msgText = msg ? msg.value : "";
 
-function c(i){return document.getElementById("c"+i).checked;}
-function a(i){return document.getElementById("a"+i).checked;}
-function ch(i){return document.getElementById("ch"+i).checked;}
-function s(i){return document.getElementById("s"+i).checked;}
-
-function calc(i,base){
-  let q=document.getElementById("q"+i).value;
-  let ad=addons(i);
-  document.getElementById("t"+i).innerText=q*(base+ad.price);
-}
-
-function order(i,name,base){
-  let q=document.getElementById("q"+i).value;
-  let ad=addons(i);
-  let total=document.getElementById("t"+i).innerText;
-  let msg=document.getElementById("name4")?.value||"";
-
-  let text=`MELVIQUE ORDER 🍫
+  const text =
+`MELVIQUE ORDER 🍫
 Product: ${name}
 Quantity: ${q}
-Add-ons: ${ad.text}
-${msg?`Name/Message: ${msg}`:""}
-Total: ₹${total}`;
+${msgText ? "Name/Message: "+msgText : ""}
+Total: ₹${totalPrice}`;
 
-  window.open("https://wa.me/919999829152?text="+encodeURIComponent(text));
+  window.location.href =
+    "https://wa.me/919999829152?text=" + encodeURIComponent(text);
 }
