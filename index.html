@@ -2,31 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Customize – MELVIQUE</title>
+  <title>MELVIQUE – Handcrafted Chocolates, No Preservatives</title>
+  <meta name="description" content="Luxury handcrafted chocolates with no preservatives. Customised chocolate orders by MELVIQUE.">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h2 id="title"></h2>
+<!-- HERO / BRAND SECTION -->
+<section class="hero">
+  <h1>MELVIQUE</h1>
+  <p class="tagline">Handcrafted Chocolates • No Preservatives</p>
+</section>
 
-<label>Quantity</label>
-<input type="number" id="qty" value="1" min="1" onchange="calculate()">
+<!-- PRODUCTS -->
+<section class="products">
+  <h2>Our Premium Chocolates</h2>
 
-<h3>Add-ons (per piece)</h3>
-<label><input type="checkbox" id="c" onchange="calculate()"> Cashews +₹7</label><br>
-<label><input type="checkbox" id="a" onchange="calculate()"> Almonds +₹5</label><br>
-<label><input type="checkbox" id="ch" onchange="calculate()"> Choco Chips +₹10</label><br>
-<label><input type="checkbox" id="s" onchange="calculate()"> Sprinkles +₹8</label><br>
+  <div class="product">
+    <img src="Mini-Joy-Chocolate.jpg.jpeg" alt="Mini Joy Chocolate">
+    <h3>Mini Joy Chocolate</h3>
+    <p>₹10 per piece</p>
+    <a href="customize.html?product=mini">Customize</a>
+  </div>
 
-<div id="nameBox" style="display:none">
-  <label>Name / Message</label>
-  <input type="text" id="msg">
-</div>
+  <div class="product">
+    <img src="Mid-Size-Chocolate-Bliss.jpg.jpeg" alt="Mid Size Chocolate Bliss">
+    <h3>Mid-Size Chocolate Bliss</h3>
+    <p>₹25 per piece</p>
+    <a href="customize.html?product=mid">Customize</a>
+  </div>
 
-<h2>Total: ₹<span id="total"></span></h2>
+  <div class="product">
+    <img src="Big-Bite-Chocolate-Bar.jpg.jpeg" alt="Big Bite Chocolate Bar">
+    <h3>Big Bite Chocolate Bar</h3>
+    <p>₹99 per piece</p>
+    <a href="customize.html?product=big">Customize</a>
+  </div>
 
-<button onclick="placeOrder()">Place Order on WhatsApp</button>
+  <div class="product">
+    <img src="Personalised-Name-Chocolate.jpg.jpeg" alt="Personalised Name Chocolate">
+    <h3>Personalised Name Chocolate</h3>
+    <p>₹149 per piece</p>
+    <a href="customize.html?product=name">Customize</a>
+  </div>
+</section>
 
-<script src="script.js"></script>
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <h2>What Our Customers Say</h2>
+
+  <div class="testimonial">
+    <p>
+      “I tried your chocolate, it was awesome. I couldn’t help myself and ate the
+      whole bag. I really loved how you wrote the name on the back of the dark
+      chocolate. There is no way to improve it more.”
+    </p>
+    <span>— Daillish</span>
+  </div>
+
+  <div class="testimonial">
+    <p>
+      “It tastes so good that I could not stop myself, and I am shocked that
+      there are no preservatives at all.”
+    </p>
+    <span>— Sanjay</span>
+  </div>
+
+  <div class="testimonial">
+    <p>
+      “Hi Dear, I received some of your chocolates. My kids were so delighted by
+      the taste and unique shape. I also tried them — it was marvellous. Even I
+      loved it as an adult.”
+    </p>
+    <span>— Happy Customer</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>Follow us on Instagram</p>
+  <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=10u06typ"
+     target="_blank">
+    @melviquechocolates
+  </a>
+</footer>
+
 </body>
 </html>
