@@ -1,60 +1,143 @@
-/* ===== CUSTOMIZE PAGE FIX ===== */
-
-.customize-page {
-  min-height: 100vh;
-  background: linear-gradient(180deg, #0e0e0e, #1a0f0a);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-  max-width: 420px;
-  margin: auto;
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f5f5dc; /* Light beige for luxury */
+    color: #3e2723; /* Dark brown */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
-
-.customize-page h1 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 25px;
-  text-align: center;
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #d4af37; /* Gold accent */
+    color: white;
 }
-
-.customize-page label {
-  width: 100%;
-  margin-top: 12px;
-  font-size: 0.9rem;
+header h1 {
+    font-size: 3em;
+    margin: 0;
 }
-
-.customize-page input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 6px;
-  border-radius: 8px;
-  border: none;
+header p {
+    font-size: 1.2em;
+    font-family: 'Arial', sans-serif;
 }
-
-.addons {
-  width: 100%;
-  margin-top: 15px;
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-
-.addons label {
-  display: block;
-  margin-bottom: 8px;
+.product {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 20px;
 }
-
-.customize-page h2 {
-  margin-top: 25px;
-  font-size: 1.4rem;
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
 }
-
-.customize-page button {
-  width: 100%;
-  margin-top: 25px;
-  padding: 14px;
-  border-radius: 30px;
-  background: linear-gradient(135deg, #d4af37, #b08d57);
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
+.product h3 {
+    margin: 10px 0;
+}
+.product p {
+    font-weight: bold;
+}
+button {
+    background-color: #d4af37;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+}
+button:hover {
+    background-color: #b8860b;
+}
+.reviews {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+.reviews h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.review {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 10px 0;
+    font-style: italic;
+}
+footer {
+    background-color: #3e2723;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+footer a {
+    color: #d4af37;
+    text-decoration: none;
+}
+.container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+.container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.container h2 {
+    margin: 10px 0;
+}
+.container p {
+    font-weight: bold;
+    margin: 10px 0;
+}
+label {
+    display: block;
+    margin: 10px 0;
+    font-family: 'Arial', sans-serif;
+}
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+}
+.add-ons {
+    text-align: left;
+    margin: 20px 0;
+}
+.add-ons label {
+    display: block;
+    margin: 5px 0;
+}
+#personalised-field {
+    margin: 20px 0;
+}
+#total {
+    font-size: 1.5em;
+    color: #d4af37;
+}
+@media (max-width: 768px) {
+    header h1 { font-size: 2em; }
+    .products { grid-template-columns: 1fr; }
+    .container { padding: 20px; }
 }
