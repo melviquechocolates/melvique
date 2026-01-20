@@ -6,49 +6,86 @@
   <title>MELVIQUE – Handcrafted Chocolates</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <section class="hero">
-    <h1>MELVIQUE</h1>
-    <p>Handcrafted Chocolates • No Preservatives</p>
-  </section>
+<section class="hero">
+  <h1>MELVIQUE</h1>
+  <p>Handcrafted Chocolates • No Preservatives</p>
+</section>
 
-  <section class="products">
-    <h2>Our Premium Chocolates</h2>
+<section class="products">
 
-    <div class="product">
-      <img src="Mini-Joy-Chocolate.jpg.jpeg" alt="Mini Joy Chocolate">
-      <h3>Mini Joy Chocolate</h3>
-      <p>₹10 per piece</p>
-      <button onclick="orderWhatsApp('Mini Joy Chocolate')">Order on WhatsApp</button>
-    </div>
+  <!-- PRODUCT 1 -->
+  <div class="product">
+    <img src="Mini-Joy-Chocolate.jpg.jpeg">
+    <h3>Mini Joy Chocolate</h3>
+    <p>₹10 per piece</p>
 
-    <div class="product">
-      <img src="Mid-Size-Chocolate-Bliss.jpg.jpeg" alt="Mid Size Chocolate">
-      <h3>Mid Size Chocolate Bliss</h3>
-      <p>₹25 per piece</p>
-      <button onclick="orderWhatsApp('Mid Size Chocolate Bliss')">Order on WhatsApp</button>
-    </div>
+    <input type="number" id="qty1" value="1" min="1" onchange="calc(1,10)">
+    <label><input type="checkbox" id="c1" onchange="calc(1,10)"> Cashews +₹7</label>
+    <label><input type="checkbox" id="a1" onchange="calc(1,10)"> Almonds +₹5</label>
+    <label><input type="checkbox" id="ch1" onchange="calc(1,10)"> Choco Chips +₹10</label>
+    <label><input type="checkbox" id="s1" onchange="calc(1,10)"> Sprinkles +₹8</label>
 
-    <div class="product">
-      <img src="Big-Bite-Chocolate-Bar.jpg.jpeg" alt="Big Bite Chocolate">
-      <h3>Big Bite Chocolate Bar</h3>
-      <p>₹99 per piece</p>
-      <button onclick="orderWhatsApp('Big Bite Chocolate Bar')">Order on WhatsApp</button>
-    </div>
+    <p>Total ₹<span id="t1">10</span></p>
+    <button onclick="order(1,'Mini Joy Chocolate',10)">Place Order</button>
+  </div>
 
-    <div class="product">
-      <img src="Personalised-Name-Chocolate.jpg.jpeg" alt="Personalised Chocolate">
-      <h3>Personalised Name Chocolate</h3>
-      <p>₹149 per piece</p>
-      <button onclick="orderWhatsApp('Personalised Name Chocolate')">Order on WhatsApp</button>
-    </div>
+  <!-- PRODUCT 2 -->
+  <div class="product">
+    <img src="Mid-Size-Chocolate-Bliss.jpg.jpeg">
+    <h3>Mid Size Chocolate Bliss</h3>
+    <p>₹25 per piece</p>
 
-  </section>
+    <input type="number" id="qty2" value="1" min="1" onchange="calc(2,25)">
+    <label><input type="checkbox" id="c2" onchange="calc(2,25)"> Cashews +₹7</label>
+    <label><input type="checkbox" id="a2" onchange="calc(2,25)"> Almonds +₹5</label>
+    <label><input type="checkbox" id="ch2" onchange="calc(2,25)"> Choco Chips +₹10</label>
+    <label><input type="checkbox" id="s2" onchange="calc(2,25)"> Sprinkles +₹8</label>
 
-  <script src="script.js"></script>
+    <p>Total ₹<span id="t2">25</span></p>
+    <button onclick="order(2,'Mid Size Chocolate Bliss',25)">Place Order</button>
+  </div>
+
+  <!-- PRODUCT 3 -->
+  <div class="product">
+    <img src="Big-Bite-Chocolate-Bar.jpg.jpeg">
+    <h3>Big Bite Chocolate Bar</h3>
+    <p>₹99 per piece</p>
+
+    <input type="number" id="qty3" value="1" min="1" onchange="calc(3,99)">
+    <label><input type="checkbox" id="c3" onchange="calc(3,99)"> Cashews +₹7</label>
+    <label><input type="checkbox" id="a3" onchange="calc(3,99)"> Almonds +₹5</label>
+    <label><input type="checkbox" id="ch3" onchange="calc(3,99)"> Choco Chips +₹10</label>
+    <label><input type="checkbox" id="s3" onchange="calc(3,99)"> Sprinkles +₹8</label>
+
+    <p>Total ₹<span id="t3">99</span></p>
+    <button onclick="order(3,'Big Bite Chocolate Bar',99)">Place Order</button>
+  </div>
+
+  <!-- PRODUCT 4 -->
+  <div class="product">
+    <img src="Personalised-Name-Chocolate.jpg.jpeg">
+    <h3>Personalised Name Chocolate</h3>
+    <p>₹149 per piece</p>
+
+    <input type="number" id="qty4" value="1" min="1" onchange="calc(4,149)">
+    <input type="text" id="name4" placeholder="Name / Message">
+
+    <label><input type="checkbox" id="c4" onchange="calc(4,149)"> Cashews +₹7</label>
+    <label><input type="checkbox" id="a4" onchange="calc(4,149)"> Almonds +₹5</label>
+    <label><input type="checkbox" id="ch4" onchange="calc(4,149)"> Choco Chips +₹10</label>
+    <label><input type="checkbox" id="s4" onchange="calc(4,149)"> Sprinkles +₹8</label>
+
+    <p>Total ₹<span id="t4">149</span></p>
+    <button onclick="order(4,'Personalised Name Chocolate',149)">Place Order</button>
+  </div>
+
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
