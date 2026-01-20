@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Customize – MELVIQUE</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Customize Your Chocolate | MELVIQUE</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <section class="customize">
-    <h1 id="productName"></h1>
+<div class="customize-page">
 
-    <label>Quantity</label>
-    <input type="number" id="qty" min="1" value="1">
+  <h1>Customize Your Chocolate</h1>
 
-    <div class="addons">
-      <label><input type="checkbox" value="7"> Cashews (+₹7)</label>
-      <label><input type="checkbox" value="5"> Almonds (+₹5)</label>
-      <label><input type="checkbox" value="10"> Choco Chips (+₹10)</label>
-      <label><input type="checkbox" value="8"> Sprinkles (+₹8)</label>
-    </div>
+  <!-- CUSTOMER NAME -->
+  <label>Your Name</label>
+  <input type="text" id="customerName" placeholder="Enter your name">
 
-    <div id="nameBox" style="display:none;">
-      <label>Name / Message</label>
-      <textarea id="nameMsg" maxlength="50"></textarea>
-    </div>
+  <!-- NAME ON CHOCOLATE (THIS WAS MISSING ❗) -->
+  <label>Name on Chocolate</label>
+  <input type="text" id="chocoName" placeholder="Name to write on chocolate">
 
-    <h2>Total: ₹<span id="total">0</span></h2>
+  <!-- QUANTITY -->
+  <label>Quantity</label>
+  <input type="number" id="quantity" value="1" min="1" onchange="calculateTotal()">
 
-    <button onclick="placeOrder()">Place Order on WhatsApp</button>
-  </section>
+  <!-- ADD ONS -->
+  <div class="addons">
+    <label><input type="checkbox" value="20" onchange="calculateTotal()"> Dry Fruits (+₹20)</label>
+    <label><input type="checkbox" value="10" onchange="calculateTotal()"> Sprinklers (+₹10)</label>
+    <label><input type="checkbox" value="15" onchange="calculateTotal()"> Choco Chips (+₹15)</label>
+  </div>
 
-  <script src="script.js"></script>
+  <!-- TOTAL -->
+  <h2>Total: ₹<span id="total">149</span></h2>
+
+  <!-- PLACE ORDER -->
+  <button onclick="placeOrder()">Place Order on WhatsApp</button>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
