@@ -1,148 +1,54 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ===== CUSTOMIZE PAGE FIX ===== */
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: #0e0e0e;
+.customize-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0e0e0e, #1a0f0a);
   color: #fff;
-}
-
-/* ================= HERO ================= */
-
-.hero {
-  height: 70vh;
-  background: linear-gradient(180deg, #000, #1a0f0a);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
-  letter-spacing: 3px;
-}
-
-.hero p {
-  margin-top: 10px;
-  font-size: 1.1rem;
-  opacity: 0.9;
-}
-
-/* ================= PRODUCTS ================= */
-
-.products {
-  padding: 60px 10%;
-  text-align: center;
-}
-
-.products h2 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 40px;
-}
-
-.product {
-  background: #141414;
-  padding: 25px;
-  margin-bottom: 30px;
-  border-radius: 14px;
-}
-
-.product img {
-  width: 100%;
-  max-width: 260px;
-  border-radius: 12px;
-  margin-bottom: 15px;
-}
-
-.product h3 {
-  font-family: 'Playfair Display', serif;
-}
-
-.btn,
-.product button {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 28px;
-  background: linear-gradient(135deg, #d4af37, #b08d57);
-  color: #000;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-}
-
-/* ================= CUSTOMIZE PAGE ================= */
-
-.customize {
-  min-height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.customize > div,
-.customize {
-  background: linear-gradient(180deg, #0e0e0e, #1a0f0a);
-}
-
-.customize {
   padding: 40px 20px;
-}
-
-.customize {
-  display: flex;
-  justify-content: center;
-}
-
-.customize section,
-.customize {
   max-width: 420px;
+  margin: auto;
 }
 
-.customize h1 {
+.customize-page h1 {
   font-family: 'Playfair Display', serif;
-  text-align: center;
   margin-bottom: 25px;
+  text-align: center;
 }
 
-.customize label {
-  display: block;
-  margin-top: 15px;
-  margin-bottom: 6px;
+.customize-page label {
+  width: 100%;
+  margin-top: 12px;
   font-size: 0.9rem;
 }
 
-.customize input,
-.customize textarea {
+.customize-page input {
   width: 100%;
   padding: 10px;
+  margin-top: 6px;
   border-radius: 8px;
   border: none;
 }
 
 .addons {
+  width: 100%;
   margin-top: 15px;
 }
 
 .addons label {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
-.customize h2 {
-  text-align: center;
+.customize-page h2 {
   margin-top: 25px;
   font-size: 1.4rem;
 }
 
-.customize button {
+.customize-page button {
   width: 100%;
   margin-top: 25px;
   padding: 14px;
@@ -151,43 +57,4 @@ body {
   border: none;
   font-weight: 600;
   cursor: pointer;
-}
-
-/* ================= TESTIMONIALS ================= */
-
-.testimonials {
-  padding: 60px 10%;
-  text-align: center;
-}
-
-.testimonials h2 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 30px;
-}
-
-.testimonials blockquote {
-  margin-bottom: 20px;
-  opacity: 0.9;
-}
-
-.testimonials span {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.85rem;
-  opacity: 0.7;
-}
-
-/* ================= FOOTER ================= */
-
-footer {
-  padding: 30px;
-  text-align: center;
-  background: #000;
-}
-
-footer a {
-  display: block;
-  margin-top: 10px;
-  color: #d4af37;
-  text-decoration: none;
 }
