@@ -1,158 +1,193 @@
-/* CSS Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom, #000000, #2d1b0f);
-    color: #ffffff;
-    line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
+  background: #0e0e0e;
+  color: #fff;
 }
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    color: #d4af37; /* Gold */
-}
+
+/* ================= HERO ================= */
+
 .hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(to bottom, #000000, #2d1b0f);
+  height: 70vh;
+  background: linear-gradient(180deg, #000, #1a0f0a);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
+
 .hero h1 {
-    font-size: 3em;
-    margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  letter-spacing: 3px;
 }
+
 .hero p {
-    font-size: 1.5em;
-    color: #f4c2c2; /* Soft rose-gold */
+  margin-top: 10px;
+  font-size: 1.1rem;
+  opacity: 0.9;
 }
+
+/* ================= PRODUCTS ================= */
+
 .products {
-    padding: 50px 20px;
-    text-align: center;
+  padding: 60px 10%;
+  text-align: center;
 }
+
+.products h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 40px;
+}
+
 .product {
-    display: inline-block;
-    width: 300px;
-    margin: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background: #141414;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 14px;
 }
+
 .product img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 260px;
+  border-radius: 12px;
+  margin-bottom: 15px;
 }
+
 .product h3 {
-    margin: 10px 0;
+  font-family: 'Playfair Display', serif;
 }
-.product p {
-    font-size: 0.9em;
+
+.btn,
+.product button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #d4af37, #b08d57);
+  color: #000;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
 }
-.customize-btn {
-    background: #d4af37;
-    color: #000;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 500;
+
+/* ================= CUSTOMIZE PAGE ================= */
+
+.customize {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
+
+.customize > div,
+.customize {
+  background: linear-gradient(180deg, #0e0e0e, #1a0f0a);
 }
-.modal-content {
-    background: #2d1b0f;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #d4af37;
-    width: 80%;
-    max-width: 500px;
-    border-radius: 10px;
-    color: #fff;
+
+.customize {
+  padding: 40px 20px;
 }
-.close {
-    color: #d4af37;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+
+.customize {
+  display: flex;
+  justify-content: center;
 }
-.form-group {
-    margin: 15px 0;
+
+.customize section,
+.customize {
+  max-width: 420px;
 }
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
+
+.customize h1 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  margin-bottom: 25px;
 }
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #d4af37;
-    border-radius: 5px;
-    background: #000;
-    color: #fff;
+
+.customize label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
 }
-.addon {
-    margin: 5px 0;
+
+.customize input,
+.customize textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
 }
-.total {
-    font-size: 1.2em;
-    color: #f4c2c2;
-    margin-top: 20px;
+
+.addons {
+  margin-top: 15px;
 }
-.place-order {
-    background: #d4af37;
-    color: #000;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 500;
-    width: 100%;
+
+.addons label {
+  display: block;
+  margin-bottom: 6px;
 }
+
+.customize h2 {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 1.4rem;
+}
+
+.customize button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #d4af37, #b08d57);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ================= TESTIMONIALS ================= */
+
 .testimonials {
-    padding: 50px 20px;
-    text-align: center;
+  padding: 60px 10%;
+  text-align: center;
 }
-.testimonial {
-    display: inline-block;
-    width: 300px;
-    margin: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+.testimonials h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 30px;
 }
-.testimonial blockquote {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    color: #d4af37;
+
+.testimonials blockquote {
+  margin-bottom: 20px;
+  opacity: 0.9;
 }
-.instagram-btn {
-    background: #d4af37;
-    color: #000;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 500;
-    margin: 10px;
+
+.testimonials span {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  opacity: 0.7;
 }
-@media (max-width: 768px) {
-    .product {
-        width: 90%;
-        margin: 10px;
-    }
-    .testimonial {
-        width: 90%;
-    }
+
+/* ================= FOOTER ================= */
+
+footer {
+  padding: 30px;
+  text-align: center;
+  background: #000;
+}
+
+footer a {
+  display: block;
+  margin-top: 10px;
+  color: #d4af37;
+  text-decoration: none;
 }
