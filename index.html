@@ -1,83 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MELVIQUE – Handcrafted Chocolates</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MELVIQUE - Handcrafted Chocolates</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f5f5dc; /* Light beige for luxury */
+            color: #3e2723; /* Dark brown */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #d4af37; /* Gold accent */
+            color: white;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2em;
+            font-family: 'Arial', sans-serif;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .product {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 20px;
+        }
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .product h3 {
+            margin: 10px 0;
+        }
+        .product p {
+            font-weight: bold;
+        }
+        button {
+            background-color: #d4af37;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #b8860b;
+        }
+        .reviews {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .reviews h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .review {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        footer {
+            background-color: #3e2723;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        footer a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 2em; }
+            .products { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-
-  <!-- HERO -->
-  <section class="hero">
-    <h1>MELVIQUE</h1>
-    <p>Handcrafted Chocolates • No Preservatives</p>
-  </section>
-
-  <!-- PRODUCTS -->
-  <section class="products">
-    <h2>Our Premium Chocolates</h2>
-
-    <div class="product">
-      <img src="Mini-Joy-Chocolate.jpg.jpeg" alt="Mini Joy Chocolate">
-      <h3>Mini Joy Chocolate</h3>
-      <p>₹10 per piece</p>
-      <a href="customize.html?product=mini" class="btn">Customize</a>
-    </div>
-
-    <div class="product">
-      <img src="Mid-Size-Chocolate-Bliss.jpg.jpeg" alt="Mid Size Chocolate Bliss">
-      <h3>Mid-Size Chocolate Bliss</h3>
-      <p>₹25 per piece</p>
-      <a href="customize.html?product=mid" class="btn">Customize</a>
-    </div>
-
-    <div class="product">
-      <img src="Big-Bite-Chocolate-Bar.jpg.jpeg" alt="Big Bite Chocolate Bar">
-      <h3>Big Bite Chocolate Bar</h3>
-      <p>₹99 per piece</p>
-      <a href="customize.html?product=big" class="btn">Customize</a>
-    </div>
-
-    <div class="product">
-      <img src="Personalised-Name-Chocolate.jpg.jpeg" alt="Personalised Name Chocolate">
-      <h3>Personalised Name Chocolate</h3>
-      <p>₹149 per piece</p>
-      <a href="customize.html?product=personal" class="btn">Customize</a>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="testimonials">
-    <h2>What Our Customers Say</h2>
-
-    <blockquote>
-      “I tried your chocolate, it was awesome. I couldn’t stop myself.
-      I really loved the personalised name on it.”
-      <span>– Daillish</span>
-    </blockquote>
-
-    <blockquote>
-      “It tastes so good and I’m shocked there are no preservatives at all.”
-      <span>– Sanjay</span>
-    </blockquote>
-
-    <blockquote>
-      “My kids were delighted by the taste and unique shapes.
-      Even I loved it as an adult. Truly marvellous.”
-      <span>– Happy Customer</span>
-    </blockquote>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>Order via WhatsApp • 9999829152</p>
-    <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=10u06typ" target="_blank">
-      Follow us on Instagram
-    </a>
-  </footer>
-
+    <header>
+        <h1>MELVIQUE</h1>
+        <p>Handcrafted Chocolates • No Preservatives • Made with Love</p>
+    </header>
+    
+    <section class="products">
+        <div class="product">
+            <img src="https://source.unsplash.com/300x200/?mini,chocolate" alt="Mini Joy Chocolate">
+            <h3>Mini Joy Chocolate</h3>
+            <p>₹10 per piece</p>
+            <button onclick="window.location.href='customise.html?product=mini-joy'">CUSTOMISE</button>
+        </div>
+        <div class="product">
+            <img src="https://source.unsplash.com/300x200/?chocolate,bliss" alt="Mid Size Chocolate Bliss">
+            <h3>Mid Size Chocolate Bliss</h3>
+            <p>₹25 per piece</p>
+            <button onclick="window.location.href='customise.html?product=mid-size'">CUSTOMISE</button>
+        </div>
+        <div class="product">
+            <img src="https://source.unsplash.com/300x200/?chocolate,bar" alt="Big Bite Chocolate Bar">
+            <h3>Big Bite Chocolate Bar</h3>
+            <p>₹99 per piece</p>
+            <button onclick="window.location.href='customise.html?product=big-bite'">CUSTOMISE</button>
+        </div>
+        <div class="product">
+            <img src="https://source.unsplash.com/300x200/?personalized,chocolate" alt="Personalised Name Chocolate">
+            <h3>Personalised Name Chocolate</h3>
+            <p>₹149 per piece</p>
+            <button onclick="window.location.href='customise.html?product=personalised'">CUSTOMISE</button>
+        </div>
+    </section>
+    
+    <section class="reviews">
+        <h2>What Our Customers Say</h2>
+        <div class="review">
+            ⭐ "I tried your chocolate, it was awesome. I couldn't help myself and ate the whole bag. I really loved how you wrote the name on the back of the dark chocolate. There is no way to improve it more." — Daillish
+        </div>
+        <div class="review">
+            ⭐ "It tastes so good that I could not stop myself, and I am shocked that there are no preservatives at all." — Sanjay
+        </div>
+        <div class="review">
+            ⭐ "Hi Dear, I received some of your chocolates. My kids were so delighted by the taste and unique shape of your chocolates. I also tried them — it was marvellous. Even I loved it as an adult." — Nisha Tiwari
+        </div>
+    </section>
+    
+    <footer>
+        <a href="https://instagram.com/melviquechocolates">Instagram: @melviquechocolates</a>
+        <p>© MELVIQUE — Handcrafted Chocolates</p>
+    </footer>
 </body>
 </html>
