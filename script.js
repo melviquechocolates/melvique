@@ -55,5 +55,6 @@ Total: ₹${total}
   `;
 
   window.location.href =
-    "https://wa.me/9999829152?text=" + encodeURIComponent(message);
+  "https://wa.me/919999829152?text=" + encodeURIComponent(message);
 }
+
