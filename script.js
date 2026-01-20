@@ -1,45 +1,60 @@
 const params = new URLSearchParams(window.location.search);
 const product = params.get("product");
 
-let base = 0;
-let name = "";
+let basePrice = 0;
+let productName = "";
 
-if (product === "mini") { base = 10; name="Mini Joy Chocolate"; }
-if (product === "mid") { base = 25; name="Mid Size Chocolate Bliss"; }
-if (product === "big") { base = 99; name="Big Bite Chocolate Bar"; }
+if (product === "mini") {
+  basePrice = 10;
+  productName = "Mini Joy Chocolate";
+}
+if (product === "mid") {
+  basePrice = 25;
+  productName = "Mid-Size Chocolate Bliss";
+}
+if (product === "big") {
+  basePrice = 99;
+  productName = "Big Bite Chocolate Bar";
+}
 if (product === "name") {
-  base = 149;
-  name="Personalised Name Chocolate";
-  document.getElementById("nameBox").style.display="block";
+  basePrice = 149;
+  productName = "Personalised Name Chocolate";
+  document.getElementById("nameBox").style.display = "block";
 }
 
-document.getElementById("title").innerText = name;
-document.getElementById("total").innerText = base;
+document.getElementById("productTitle").innerText = productName;
 
-function calculate() {
-  const q = Number(qty.value);
-  let addon = 0;
+const qty = document.getElementById("qty");
+const total = document.getElementById("total");
 
-  if (c.checked) addon += 7;
-  if (a.checked) addon += 5;
-  if (ch.checked) addon += 10;
-  if (s.checked) addon += 8;
+function calculateTotal() {
+  let addons = 0;
+  if (cashews.checked) addons += 7;
+  if (almonds.checked) addons += 5;
+  if (chips.checked) addons += 10;
+  if (sprinkles.checked) addons += 8;
 
-  total.innerText = q * (base + addon);
+  total.innerText = qty.value * (basePrice + addons);
 }
+
+document.querySelectorAll("input").forEach(i =>
+  i.addEventListener("change", calculateTotal)
+);
+
+calculateTotal();
 
 function placeOrder() {
-  const q = qty.value;
-  const totalPrice = total.innerText;
-  const msgText = msg ? msg.value : "";
+  const nameMsg = document.getElementById("customName")
+    ? document.getElementById("customName").value
+    : "";
 
-  const text =
-`MELVIQUE ORDER 🍫
-Product: ${name}
-Quantity: ${q}
-${msgText ? "Name/Message: "+msgText : ""}
-Total: ₹${totalPrice}`;
+  const message = `MELVIQUE ORDER 🍫
+Product: ${productName}
+Quantity: ${qty.value}
+${nameMsg ? "Name/Message: " + nameMsg : ""}
+Total: ₹${total.innerText}`;
 
   window.location.href =
-    "https://wa.me/919999829152?text=" + encodeURIComponent(text);
+    "https://wa.me/919999829152?text=" +
+    encodeURIComponent(message);
 }
