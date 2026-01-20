@@ -1,37 +1,59 @@
-const phone = "9999829152";
+const params = new URLSearchParams(window.location.search);
+const product = params.get("product");
 
-function openModal(id){ document.getElementById(id).style.display="block"; }
-function closeModal(id){ document.getElementById(id).style.display="none"; }
+const products = {
+  mini: { name: "Mini Joy Chocolate", price: 10 },
+  mid: { name: "Mid-Size Chocolate Bliss", price: 25 },
+  big: { name: "Big Bite Chocolate Bar", price: 99 },
+  personal: { name: "Personalised Name Chocolate", price: 149 }
+};
 
-function addons(n){
-  let a=0;
-  if(document.getElementById("cashews"+n)?.checked) a+=7;
-  if(document.getElementById("almonds"+n)?.checked) a+=5;
-  if(document.getElementById("chips"+n)?.checked) a+=10;
-  if(document.getElementById("sprinkles"+n)?.checked) a+=8;
-  return a;
+const productData = products[product];
+
+document.getElementById("productName").innerText = productData.name;
+
+if (product === "personal") {
+  document.getElementById("nameBox").style.display = "block";
 }
 
-function calc1(){ total(1,10); }
-function calc2(){ total(2,25); }
-function calc3(){ total(3,99); }
-function calc4(){ total(4,149); }
+function calculateTotal() {
+  const qty = Number(document.getElementById("qty").value);
+  let addonTotal = 0;
 
-function total(n,base){
-  let q=Number(document.getElementById("qty"+n).value||1);
-  document.getElementById("total"+n).innerText=q*(base+addons(n));
+  document.querySelectorAll(".addons input:checked").forEach(a => {
+    addonTotal += Number(a.value);
+  });
+
+  const total = qty * (productData.price + addonTotal);
+  document.getElementById("total").innerText = total;
 }
 
-function send(msg){
-  window.location.href="https://wa.me/"+phone+"?text="+encodeURIComponent(msg);
-}
+document.getElementById("qty").addEventListener("input", calculateTotal);
+document.querySelectorAll(".addons input").forEach(a =>
+  a.addEventListener("change", calculateTotal)
+);
 
-function order1(){ send(`MELVIQUE ORDER\nMini Joy Chocolate\nTotal ₹${totalVal(1)}`); }
-function order2(){ send(`MELVIQUE ORDER\nMid Size Chocolate Bliss\nTotal ₹${totalVal(2)}`); }
-function order3(){ send(`MELVIQUE ORDER\nBig Bite Chocolate Bar\nTotal ₹${totalVal(3)}`); }
-function order4(){
-  let name=document.getElementById("name4").value||"—";
-  send(`MELVIQUE ORDER\nPersonalised Chocolate\nName: ${name}\nTotal ₹${totalVal(4)}`);
-}
+calculateTotal();
 
-function totalVal(n){ return document.getElementById("total"+n).innerText; }
+function placeOrder() {
+  const qty = document.getElementById("qty").value;
+  const total = document.getElementById("total").innerText;
+  const name = document.getElementById("nameMsg")?.value || "N/A";
+
+  let addons = [];
+  document.querySelectorAll(".addons input:checked").forEach(a => {
+    addons.push(a.parentElement.innerText);
+  });
+
+  const message = `
+MELVIQUE ORDER
+Product: ${productData.name}
+Quantity: ${qty}
+Add-ons: ${addons.join(", ") || "None"}
+${product === "personal" ? "Name: " + name : ""}
+Total: ₹${total}
+  `;
+
+  window.location.href =
+    "https://wa.me/9999829152?text=" + encodeURIComponent(message);
+}
